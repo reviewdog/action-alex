@@ -40,3 +40,4 @@ jobs:
           reporter: github-pr-review
           level: error
           reviewdog_flags: -filter-mode=file -fail-on-error
+          alex_flags: ./testdata/subdir
