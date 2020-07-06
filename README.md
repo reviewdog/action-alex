@@ -10,7 +10,6 @@
 ![github-pr-review demo](https://user-images.githubusercontent.com/3797062/86608522-a2533700-bfe5-11ea-958b-a5bcfebbe059.png)
 ![github-pr-check demo](https://user-images.githubusercontent.com/3797062/86608626-bf880580-bfe5-11ea-9413-56028bdc63c5.png)
 
-This repo contains a sample action to run [misspell](https://github.com/client9/misspell).
 This action runs [alex](https://alexjs.com/) with [reviewdog](https://github.com/reviewdog/reviewdog) on pull requests to improve code review experience.
 
 ## Input
