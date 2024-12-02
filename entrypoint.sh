@@ -8,6 +8,7 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
+# shellcheck disable=SC2086
 alex ${INPUT_ALEX_FLAGS} . 2>&1 >/dev/null \
   | reviewdog \
       -efm='%-P%f' \
