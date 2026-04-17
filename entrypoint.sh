@@ -1,5 +1,4 @@
 #!/bin/sh
-set -e
 
 if [ -n "${GITHUB_WORKSPACE}" ] ; then
   git config --global --add safe.directory "${GITHUB_WORKSPACE}" || exit
@@ -8,6 +7,7 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
+echo '::group:: Running alex with reviewdog 🐶 ...'
 # shellcheck disable=SC2086
 alex ${INPUT_ALEX_FLAGS} . 2>&1 >/dev/null \
   | reviewdog \
@@ -23,3 +23,7 @@ alex ${INPUT_ALEX_FLAGS} . 2>&1 >/dev/null \
       -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
       -level="${INPUT_LEVEL}" \
       ${INPUT_REVIEWDOG_FLAGS}
+exit_code=$?
+echo '::endgroup::'
+
+exit $exit_code
